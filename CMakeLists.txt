@@ -1,5 +1,8 @@
-project(lab1)
+cmake_minimum_required(VERSION 2.8)
 
-add_executable(lab1 main.cpp)
+project(testapp)
 
-install(TARGETS lab1 RUNTIME DESTINATION bin)
+add_executable(main cBox.cxx main.cxx)
+
+file(GLOB Tests_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*_cppunit.cxx" )
+add_library(${PROJECT_NAME}_cppunit SHARED ${Tests_SRCS})
