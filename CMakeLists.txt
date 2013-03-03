@@ -1,0 +1,5 @@
+project(lab1)
+
+add_executable(lab1 main.cpp)
+
+install(TARGETS lab1 RUNTIME DESTINATION bin)
