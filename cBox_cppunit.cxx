@@ -11,7 +11,7 @@ CPPUNIT_TEST_SUITE_REGISTRATION( cBox_CPPUnit );
  **/
 void cBox_CPPUnit::test_0_volume_exception() {
 	cBox box;
-	CPPUNIT_ASSERT_THROW(box.calculateVolume(), std::exception);
+	CPPUNIT_ASSERT_THROW(box.calculateVolume(), cBoxVolumeException);
 }
 
 /**
@@ -49,7 +49,7 @@ void cBox_CPPUnit::test_reset_params() {
 	box.setWidth(1.0);
 	CPPUNIT_ASSERT_EQUAL(box.calculateVolume(), 1.0);
 	box.resetParams();
-	CPPUNIT_ASSERT_THROW(box.calculateVolume(), std::exception);
+	CPPUNIT_ASSERT_THROW(box.calculateVolume(), cBoxVolumeException);
 }
 
 /**

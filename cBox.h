@@ -1,6 +1,15 @@
 #ifndef C_BOX_H
 #define C_BOX_H
 
+#include <exception>
+
+class cBoxException : public std::exception {
+	
+};
+
+class cBoxVolumeException : public cBoxException {
+};
+
 class cBox {
 public:
 	cBox();

@@ -1,5 +1,4 @@
 #include "cBox.h"
-#include <exception>
 
 /**
  * @brief Конструктор
@@ -50,9 +49,9 @@ int cBox::setWidth(const double& width) {
  * -1 - ошибка
  **/
 int cBox::setLenght(const double& lenght) {
-	if (lenght <= 0) {
+	/*if (lenght <= 0) {
 		return -1;
-	}
+	}*/
 	
 	m_lenght = lenght;
 	return 0;
@@ -104,7 +103,7 @@ double cBox::getLenght() {
 double cBox::calculateVolume() {
 	double volume = m_height * m_width * m_lenght;
 	if (volume <= 0.0) {
-		throw std::exception();		// исключение невозможного объема
+		throw cBoxVolumeException();		// исключение невозможного объема
 	}
 	return volume;
 }
